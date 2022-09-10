@@ -1,15 +1,15 @@
 variable "cloudflare_email" {
-  description = "The email associated with the account. This can also be specified with the CLOUDFLARE_EMAIL shell environment variable."
+  description = "Email address associated with the account."
   default     = "default"
 }
 
 variable "cloudflare_token" {
-  description = "The Cloudflare API token. This can also be specified with the CLOUDFLARE_TOKEN shell environment variable."
+  description = "Cloudflare API token."
   default     = "default"
 }
 
 variable "cloudflare_zone" {
-  description = "The DNS zone to add the record to."
+  description = "The DNS zone to add the record to, for example: domain.com."
   default     = "default"
 }
 
