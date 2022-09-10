@@ -1,19 +1,17 @@
-resource "cloudflare_record" "cname-www" {
-  domain = "${var.cloudflare_zone}"
-
-  name    = "www"
-  value   = "${cloudflare_record.a-root.hostname}"
+resource "cloudflare_record" "example-record-5" {
+  zone_id = "${var.cloudflare_zone_id}"
+  name    = "example-record-5"
+  value   = "12345-67890-abcdef-ghijkl.cfargotunnel.com" ## This example shows usage of a Cloudflare Argo Tunnels ID.
   type    = "CNAME"
   ttl     = 3600
-  proxied = false
+  proxied = true
 }
 
-resource "cloudflare_record" "cname-mail" {
-  domain = "${var.cloudflare_zone}"
-
-  name    = "mail"
-  value   = "ghs.googlehosted.com"
+resource "cloudflare_record" "example-record-6" {
+  zone_id = "${var.cloudflare_zone_id}"
+  name    = "example-record-6"
+  value   = "${cloudflare_record.example-com.hostname}"
   type    = "CNAME"
   ttl     = 3600
-  proxied = false
+  proxied = true
 }

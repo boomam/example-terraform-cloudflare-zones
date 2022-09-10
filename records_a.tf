@@ -1,19 +1,17 @@
-resource "cloudflare_record" "terraform" {
-  domain  = "${var.cloudflare_zone}"
-
-  name    = "terraform"
-  value   = "192.168.0.11"
+resource "cloudflare_record" "example-record-1" {
+  zone_id = "${var.cloudflare_zone_id}"
+  name    = "example-record-1"
+  value   = "1.2.3.4"
   type    = "A"
   ttl     = 1
   proxied = true
 }
 
-resource "cloudflare_record" "a-root" {
-  domain = "${var.cloudflare_zone}"
-
-  name    = "@"
-  value   = "${var.main_server}"
+resource "cloudflare_record" "example-record-2" {
+  zone_id = "${var.cloudflare_zone_id}"
+  name    = "example-record-2"
+  value   = "1.2.3.4"
   type    = "A"
-  ttl     = 3600
-  proxied = false
+  ttl     = 1
+  proxied = true
 }

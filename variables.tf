@@ -1,19 +1,14 @@
 variable "cloudflare_email" {
   description = "Email address associated with the account."
-  default     = "default"
+  default     = "my-email-address"
 }
 
 variable "cloudflare_token" {
   description = "Cloudflare API token."
-  default     = "default"
+  default     = "my-super-secret-and-secure-token"
 }
 
-variable "cloudflare_zone" {
-  description = "The DNS zone to add the record to, for example: domain.com."
-  default     = "default"
-}
-
-variable "main_server" {
-  description = "The main web server"
-  default     = "127.0.0.1"
+variable "cloudflare_zone_id" {
+  description = "the zone ID for your domain"
+  default     = "my-zone-id"
 }

@@ -1,26 +1,8 @@
-resource "cloudflare_record" "txt-amazonses" {
+resource "cloudflare_record" "spf" {
   domain = "${var.cloudflare_zone}"
 
-  name  = "_amazonses"
-  value = "xxxxxxxx"
-  type  = "TXT"
-  ttl   = 300
-}
-
-resource "cloudflare_record" "txt-dmarc" {
-  domain = "${var.cloudflare_zone}"
-
-  name  = "_dmarc"
-  value = "v=DMARC1; p=none; pct=100; rua=mailto:xxxxxxxx@dmarc.example.com; sp=none; aspf=r;"
-  type  = "TXT"
-  ttl   = 300
-}
-
-resource "cloudflare_record" "txt-mandrill-domainkey" {
-  domain = "${var.cloudflare_zone}"
-
-  name  = "mandrill._domainkey"
-  value = "v=DKIM1; k=rsa; p=xxxxxxxx;"
+  name  = "@"
+  value = "v=spf1 include:_spf.mx.cloudflare.net ~all" ## Change this to your required SPF, example is Cloudflare's SPF
   type  = "TXT"
   ttl   = 300
 }
