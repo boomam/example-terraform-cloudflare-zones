@@ -20,6 +20,6 @@ terraform apply
 ```
 
 ## Useful Links
-* [cloudflare_record: examples](https://registry.terraform.io/providers/cloudflare/cloudflare/latest/docs/resources/record
+* [cloudflare_record: examples](https://registry.terraform.io/providers/cloudflare/cloudflare/latest/docs/resources/record)
 * [Finding your account ID & Zone ID](https://developers.cloudflare.com/fundamentals/get-started/basic-tasks/find-account-and-zone-ids/)
 * [Creating an API Token](https://developers.cloudflare.com/api/tokens/create/)
